@@ -3,10 +3,17 @@ import os
 try:
     from pypresence import Presence
     from InquirerPy import inquirer
+    from colorama import init, Fore
 except ImportError:
-    os.system('pip install pypresence InquirerPy')
+    os.system('pip install pypresence InquirerPy colorama')
     from pypresence import Presence
     from InquirerPy import inquirer
+    from colorama import init, Fore
+    
+init(autoreset=True)
+
+clsr = lambda: os.system('cls' if os.name == 'nt' else 'clear')
+clsr()
 
 client_id = '1021010790104436836'
 RPC = Presence(client_id)
@@ -63,7 +70,19 @@ topic_ques = inquirer.text(
 # ---------- begin ----------
 
 def initial():
-    print(f'> Developed by: SingletLinkage (@QC#2293)\n> Client ID: {client_id}\n> Version: 1.2')
+    clsr()
+    print(f'    {Fore.BLUE}+---     ---  +--   +--    ---')
+    print(f'    {Fore.CYAN}|   \   /     |  \  |  \  /')
+    print(f'    {Fore.GREEN}|    |  |     |  /  |  /  |')
+    print(f'    {Fore.YELLOW}|   /   \     | \   |--   \\')
+    print(f'    {Fore.RED}+---     ---  |  \  |      ---')
+    print(f"""
+        
+    {Fore.YELLOW}Developed by: {Fore.CYAN}SingletLinkage (@QC#2293)
+    {Fore.YELLOW}Client ID: {Fore.RED}{client_id}
+    {Fore.YELLOW}Version: {Fore.RED}1.3
+{Fore.CYAN}The answer these questions to set up your rich discord presence! :)
+    """)
 
 def get_details():
     cur_time = time.time()
