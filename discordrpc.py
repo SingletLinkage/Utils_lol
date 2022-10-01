@@ -91,7 +91,8 @@ def update_rpc(stuff):
         details=stuff['sub'],
         start=stuff['time'],
         large_image=pic,
-        large_text=stuff['sub']
+        large_text=stuff['sub'],
+        buttons=[{'label':'Study Server', 'url':'https://bit.ly/3UUTew7'}]
     )
 
     print('Enjoy your rich presence on discord :)')
